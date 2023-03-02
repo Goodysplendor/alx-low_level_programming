@@ -2,25 +2,25 @@
 
 /**
  * _strcmp - compare 2 string
- * @s1:string
- * @s2:strmp
- * Return:int
+ * @s1: compare the content to s2
+ * @s2: compare the content to s1
+ * Return: return flag value to function
  */
 int _strcmp(char *s1, char *s2)
 {
-	while (((*s1 != '\0') && (*s2 != '\0')) && (*s1 == *s2))
-	{
-		s1++;
-		s2++
-	}
+	int i, flag = 0;
 
-	if (*s1 == *s2)
+	for (i = 0; s1[i] != '\0' || s2[i] != '\0'; i++)
 	{
-		return (0);
+		if (s1[i] != s2[i])
+		{
+			flag = s1[i] - s2[i];
+		}
+		else
+		{
+			continue;
+		}
+		return (flag);
 	}
-
-	else
-	{
-		return (*s1 - *s2);
-	}
+	return (0);
 }
