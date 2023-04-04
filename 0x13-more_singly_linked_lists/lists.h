@@ -7,7 +7,7 @@
 /**
  * struct listint_s - singly linkked list
  * @n: integer
- * @next: points to the next node
+ * @next: points to the node
  * Description: singly linked list node structure for alx project
  */
 
@@ -15,10 +15,7 @@ typedef struct listint_s
 {
 	int n;
 	struct listint_s *next;
-}
-listint-t;
-
-typedef struct listint_s
+} listint_t;
 size_t print_listint(const listint_ *h);
 size_t listint_len(const listint_t *h);
 listint_t *add_nodeint(listint_t **head, const int n);
