@@ -2,7 +2,7 @@
 
 /**
  * flip_bits - Counts the number of bits to change
- * to get from one number  to another.
+ *		 to get from one number  to another.
  * @n: The first number
  * @m: The second number
  *
@@ -10,17 +10,14 @@
  */
 unsigned int flip_bits(unsigned long int n, unsigned long int m)
 {
-	int i, count = 0;
-	unsigned long int current;
-	unsigned long int exclusive = n ^ m;
+	unsigned long int xor_result = n ^ m;
+	unsigned int num_flips = 0;
 
-	for (i = 63; i >= 0; i--)
+	while (xor_result)
 	{
-		current = exclusive >> i;
-		if (current & 1)
-			count++;
-		result <<= 1;
+		num_flips += xor_result & 1;
+		xor_result >>= 1;
 	}
 
-	return (count);
+	return (num_flips);
 }
