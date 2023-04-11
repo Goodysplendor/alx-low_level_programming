@@ -178,10 +178,8 @@ void print_osabi(unsigned char *e_ident)
  * print_abi - prints the ABI version of an Elf header
  * @e_ident: pointer to an array containing the ELF ABI version
  */
-void print_abi(unsigned char *e_ident)
-{
-	printf(" ABI Version:			%d\n",
-			e_ident[EI_ABIVERSION]);
+void print_abi(unsigned char *e_ident) {
+	printf(" ABI Version: %d\n", e_ident[EI_ABIVERSION]);
 }
 
 /**
@@ -194,7 +192,7 @@ void print_type(unsigned int e_type, unsigned char *e_ident)
 	if (e_ident[EI_DATA] == ELFDATA2MSB)
 		e_type >>= 8;
 
-	printf(" Type:			");
+	printf(" Type:		");
 
 	switch (e_type)
 	{
