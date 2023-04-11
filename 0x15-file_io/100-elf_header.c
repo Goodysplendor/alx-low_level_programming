@@ -57,7 +57,7 @@ void print_magic(unsigned char *e_ident)
 		if (index == EI_NIDENT - 1)
 			printf("\n");
 		else
-			prints(" ");
+			printf(" ");
 	}
 }
 
@@ -81,7 +81,7 @@ void print_class(unsigned char *e_ident)
 		printf("ELF64\n");
 		break;
 	default:
-		printf("<unknown: %x>\n", e_ident[EL_CLASS]);
+		printf("<unknown: %x>\n", e_ident[EI_CLASS]);
 	}
 }
 
@@ -170,7 +170,7 @@ void print_osabi(unsigned char *e_ident)
 		printf("Standalone App\n");
 		break;
 	default:
-		printf("<unknown: %x>\n", e_ident[EL_OSABI]);
+		printf("<unknown: %x>\n", e_ident[EI_OSABI]);
 	}
 }
 
@@ -250,7 +250,7 @@ void close_elf(int elf)
 	if (close(elf) == -1)
 	{
 		dprintf(STDERR_FILENO,
-				"Error: Can't close fd %d\n" elf);
+				"Error: Can't close fd %d\n", elf);
 		exit(98);
 	}
 }
